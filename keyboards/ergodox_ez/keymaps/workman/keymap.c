@@ -1,4 +1,5 @@
-#include "ergodox_ez.h"
+#include QMK_KEYBOARD_H
+//#include "ergodox_ez.h"
 #include "debug.h"
 #include "action_layer.h"
 #include "version.h"
@@ -128,8 +129,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
 	TRANS,		KC_NO,		TRANS,		TRANS,		KC_DEL,		TRANS,
 
-	KC_F12,		KC_F6,		KC_F7,		KC_F8,		KC_F9,		KC_F10,		KC_SLCK,
-	KC_NO,		KC_PMNS,	KC_P7,		KC_P8,		KC_P9,		KC_PSLS,	KC_NLCK,
+	KC_F12,		KC_F6,		KC_F7,		KC_F8,		KC_F9,		KC_F10,		KC_SCRL,
+	KC_NO,		KC_PMNS,	KC_P7,		KC_P8,		KC_P9,		KC_PSLS,	KC_NUM,
 				KC_PPLS,	KC_P4,		KC_P5,		KC_P6,		KC_PAST,	KC_PENT,
 	KC_NO,		KC_P0,		KC_P1,		KC_P2,		KC_P3,		KC_PDOT,	KC_NO,
 							TRANS,		KC_NO,		KC_NO,		KC_NO,		KC_NO,
@@ -157,17 +158,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
 };
 
-// leaving this in place for compatibilty with old keymaps cloned and re-compiled.
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
-	return MACRO_NONE;
-};
-
 void matrix_init_user(void) {
 	ergodox_board_led_off();
 	ergodox_right_led_1_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-	set_unicode_input_mode(UC_LNX);
+	set_unicode_input_mode(UNICODE_MODE_LINUX);
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -181,8 +177,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	return true;
 }
 
-uint32_t layer_state_set_user(uint32_t state) {
-	uint8_t layer = biton32(state);
+layer_state_t layer_state_set_user(layer_state_t state) {
+	uint8_t layer = get_highest_layer(state);
 	switch (layer) {
 		case WMAN:
 			ergodox_board_led_off();
