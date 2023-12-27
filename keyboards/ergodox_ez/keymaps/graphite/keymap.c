@@ -51,10 +51,10 @@ const uint32_t PROGMEM unicode_map[] = {
 };
 
 // Graphite has non-standard shifted punctuation
-const key_override_t underscoreOverride = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, S(KC_MINS));
-const key_override_t questionOverride   = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, S(KC_SLSH));
-const key_override_t dQuoteOverride     = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, S(KC_QUOT));
-const key_override_t lAngBrakOverride   = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, S(KC_COMM));
+const key_override_t underscoreOverride = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUOT, S(KC_MINS), (1 << GRAP));
+const key_override_t questionOverride   = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMM, S(KC_SLSH), (1 << GRAP));
+const key_override_t dQuoteOverride     = ko_make_with_layers(MOD_MASK_SHIFT, KC_MINS, S(KC_QUOT), (1 << GRAP));
+const key_override_t lAngBrakOverride   = ko_make_with_layers(MOD_MASK_SHIFT, KC_SLSH, S(KC_COMM), (1 << GRAP));
 
 const key_override_t **key_overrides = (const key_override_t *[]){
 	&underscoreOverride,
@@ -66,7 +66,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	// Workman (base)
+	// Graphite (base)
 	[GRAP] = LAYOUT_ergodox(
 			KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_INS,
 			KC_GRV,     KC_B,       KC_L,       KC_D,       KC_W,       KC_Z,       KC_NO,
@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			TRANS,      TRANS,      TRANS,      TRANS,      TRANS,      TRANS,
 
 			TRANS,      TRANS,      TRANS,      TRANS,      TRANS,      TRANS,      TRANS,
-			TRANS,      KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       TRANS,
-						KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    TRANS,
-			TRANS,      KC_N,       KC_M,       TRANS,      TRANS,      TRANS,      TRANS,
+			TRANS,      KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_EQL,
+						KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,
+			TRANS,      KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_MINS,
 									TRANS,      TRANS,      TRANS,      TRANS,      TRANS,
 			TRANS,      TRANS,      TRANS,      TRANS,      TRANS,      TRANS
 			),
