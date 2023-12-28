@@ -20,5 +20,6 @@
 //#define NO_ACTION_ONESHOT
 
 #define USE_I2C
+#define EE_HANDS
 #define SPLIT_USB_DETECT
 
