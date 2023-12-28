@@ -18,3 +18,7 @@
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
+
+#define USE_I2C
+#define SPLIT_USB_DETECT
+
