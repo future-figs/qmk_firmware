@@ -1,3 +1,11 @@
-# This file intentionally left blank
-
 SPLIT_KEYBOARD = yes
+LTO_ENABLE = yes
+NKRO_ENABLE = yes
+DEBOUNCE_TYPE = sym_eager_pk
+
+# No hardware to support:
+AUDIO_ENABLE = no
+RGBLIGHT_ENABLE = no
+MIDI_ENABLE = no
+BLUETOOTH_ENABLE = no
+OLED_ENABLE = no
