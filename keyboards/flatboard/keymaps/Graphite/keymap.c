@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_B,    KC_L,    KC_D,    KC_W,    KC_Z,             KC_QUOT, KC_F,    KC_O,    KC_U,    KC_J,
         KC_N,    KC_R,    KC_T,    KC_S,    KC_G,             KC_Y,    KC_LEFT, KC_UP,   KC_RGHT, KC_I,
         KC_Q,    KC_X,    KC_M,    KC_C,    KC_V,             KC_K,    KC_P,    KC_DOWN, KC_MINS, KC_SLSH,
-                          KC_DEL,  KC_SPC,  KC_BSPC,          KC_ESC,  KC_ENT,  DF(_GRAPHITE)
+                          KC_DEL,  KC_SPC,  KC_BSPC,          KC_ESC,  KC_ENT,  TO(_GRAPHITE)
     ),
 
 
@@ -173,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       */
    [_SPECIAL] = LAYOUT_split_3x5_3(
         KC_ESC,  KC_BSPC, KC_DEL,  KC_NO,   KC_NO,            KC_NO,   KC_F7,   KC_F8,   KC_F9,   KC_F11,
-    KC_NO, DF(_GAME), DF(_QWERTY), DF(_GRAPHITE), KC_NO,      KC_NO,   KC_F4,   KC_F5,   KC_F6,   KC_F10,
+    KC_NO, TO(_GAME), TO(_QWERTY), TO(_GRAPHITE), KC_NO,      KC_NO,   KC_F4,   KC_F5,   KC_F6,   KC_F10,
         QK_BOOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12,
                       MT_DEL_ALT, KC_NO, MT_BSP_SFT,          MT_ESC_CTL, KC_NO, KC_LGUI
      )
