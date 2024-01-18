@@ -29,9 +29,11 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 // Layer-taps / mod-taps for thumb keys
 #define MT_DEL_ALT MT(MOD_LALT, KC_DEL)
 #define LT_SPC_NUM LT(_NUMBERS, KC_SPC)
+#define LT_SPC_SPE LT(_SPECIAL, KC_SPC)
 #define MT_BSP_SFT MT(MOD_LSFT, KC_BSPC)
 #define MT_ESC_CTL MT(MOD_LCTL, KC_ESC)
 #define LT_ENT_ARR LT(_ARROWS,  KC_ENT)
+#define LT_ENT_SPE LT(_SPECIAL,  KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -116,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *             │ Del │                               │ Met │
       *             │ Alt ├─────┐                   ┌─────┤     │
       *             └─────┤ ⬤   │                   │ Ent ├─────┘
-      *                   │     ├─────┐       ┌─────┤ ARR │
+      *                   │     ├─────┐       ┌─────┤ SPE │
       *                   └─────┤ Bsp │       │ Esc ├─────┘
       *                         │ Sft │       │ Ctr │
       *                         └─────┘       └─────┘
@@ -125,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_7,    KC_8,    KC_9,    KC_COMM,
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_4,    KC_5,    KC_6,    KC_0,
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_1,    KC_2,    KC_3,    KC_DOT,
-                      MT_DEL_ALT, KC_NO, MT_BSP_SFT,          MT_ESC_CTL, LT_ENT_ARR, KC_LGUI
+                      MT_DEL_ALT, KC_NO, MT_BSP_SFT,          MT_ESC_CTL, LT_ENT_SPE, KC_LGUI
     ),
 
      /*
@@ -140,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *             │ Del │                               │ Met │
       *             │ Alt ├─────┐                   ┌─────┤     │
       *             └─────┤ Spc │                   │ ⬤   ├─────┘
-      *                   │ NUM ├─────┐       ┌─────┤     │
+      *                   │ SPE ├─────┐       ┌─────┤     │
       *                   └─────┤ Bsp │       │ Esc ├─────┘
       *        r                │ Sft │       │ Ctr │
       *                         └─────┘       └─────┘
@@ -149,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,   KC_VOLD, KC_VOLU, KC_MUTE, KC_NO,            KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,
         KC_PSCR, KC_MPRV, KC_MNXT, KC_MPLY, KC_NO,            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                 MT_DEL_ALT, LT_SPC_NUM, MT_BSP_SFT,          MT_ESC_CTL, KC_NO, KC_LGUI
+                 MT_DEL_ALT, LT_SPC_SPE, MT_BSP_SFT,          MT_ESC_CTL, KC_NO, KC_LGUI
     ),
 
      /*
