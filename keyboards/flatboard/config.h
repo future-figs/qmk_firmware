@@ -26,4 +26,5 @@
 #define DEBOUNCE 15
 
 #define USB_POLLING_INTERVAL_MS 1
+#define F_SCL 400000L
 
