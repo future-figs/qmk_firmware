@@ -25,3 +25,5 @@
 
 #define DEBOUNCE 15
 
+#define USB_POLLING_INTERVAL_MS 1
+
