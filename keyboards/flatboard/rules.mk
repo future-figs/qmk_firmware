@@ -1,6 +1,5 @@
 SPLIT_KEYBOARD = yes
 LTO_ENABLE = yes
-NKRO_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
 
 # No hardware to support:
