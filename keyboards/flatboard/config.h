@@ -23,7 +23,7 @@
 #define EE_HANDS
 #define SPLIT_USB_DETECT
 
-#define DEBOUNCE 15
+#define DEBOUNCE 20
 
 #define USB_POLLING_INTERVAL_MS 1
 #define F_SCL 400000L
