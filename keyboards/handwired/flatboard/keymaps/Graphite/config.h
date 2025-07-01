@@ -6,4 +6,4 @@
 #define COMBO_TERM 25
 
 // Too short and old computers & MiSTer will debounce
-#define TAP_CODE_DELAY 100
+#define TAP_CODE_DELAY 10
